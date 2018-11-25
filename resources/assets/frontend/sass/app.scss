@@ -1,0 +1,133 @@
+
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/layout";
+@import "partials/print";
+@import "partials/general";
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+    transition: all .3s ease;
+}
+.slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+}
+
+.not-visible {
+    opacity: 0;
+}
+  
+.already-visible {
+    @include transition(opacity 2s ease);  
+}
+/* ---------------- */
+.header-container {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 0 auto;
+}
+.row {  
+display: flex;
+min-height: 500px;
+justify-content: center;
+}
+//flex-inner,flex-column
+.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.flex-inner {
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.flex-reverse {
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+.flex-start, .flex-reverse, .flex-end, .flex-center {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    width: 100%;
+}
+.flex-reverse {
+    flex-direction: row-reverse;
+}
+.flex-center {
+    justify-content: center;
+}
+.flex-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+.flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+.flex-column {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+img {
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+//vue lazy load
+img[lazy=loading],.mm-img[lazy=loading] {
+/*your style here*/
+    max-width: 100%;
+    opacity:0;
+    padding: 0px;
+    @include transform(scale(2));
+    @include transition(all 1s ease 0s);
+    min-height: 1px;    
+}
+img[lazy=error],.mm-img[lazy=error] {
+/*your style here*/
+    opacity:1;
+    @include transform(scale(1));
+}
+img[lazy=loaded],.mm-img[lazy=loaded] {
+/*your style here*/
+    opacity:1;
+    @include transform(scale(1));
+}
+
+//responsive
+//general
+.header-container, .container, main, .modal-container, footer {
+    @include respond-to(medium-screens) 
+        {
+            max-width: 1390px;
+            font-size: calc(.00485*0vw + 14.18182px);
+            line-height: inherit;
+        }
+    }

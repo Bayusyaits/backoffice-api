@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/Open-Sans/Normal/Open-Sans.eot");
+  src: url("../fonts/Open-Sans/Normal/Open-Sans.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans/Normal/Open-Sans.woff2") format("woff2"), url("../fonts/Open-Sans/Normal/Open-Sans.woff") format("woff"), url("../fonts/Open-Sans/Normal/Open-Sans.svg#Open Sans") format("svg"), url("../fonts/Open-Sans/Normal/Open-Sans.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/Open-Sans/Semibold/Open-Sans-Semibold.eot");
+  src: url("../fonts/Open-Sans/Semibold/Open-Sans-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans/Semibold/Open-Sans-Semibold.woff2") format("woff2"), url("../fonts/Open-Sans/Semibold/Open-Sans-Semibold.woff") format("woff"), url("../fonts/Open-Sans/Semibold/Open-Sans-Semibold.svg#Open Sans") format("svg"), url("../fonts/Open-Sans/Semibold/Open-Sans-Semibold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/Open-Sans/Light/Open-Sans-Light.eot");
+  src: url("../fonts/Open-Sans/Light/Open-Sans-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans/Light/Open-Sans-Light.woff2") format("woff2"), url("../fonts/Open-Sans/Light/Open-Sans-Light.woff") format("woff"), url("../fonts/Open-Sans/Light/Open-Sans-Light.svg#Open Sans") format("svg"), url("../fonts/Open-Sans/Light/Open-Sans-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/Open-Sans/Bold/Open-Sans-Bold.eot");
+  src: url("../fonts/Open-Sans/Bold/Open-Sans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans/Bold/Open-Sans-Bold.woff2") format("woff2"), url("../fonts/Open-Sans/Bold/Open-Sans-Bold.woff") format("woff"), url("../fonts/Open-Sans/Bold/Open-Sans-Bold.svg#Open Sans") format("svg"), url("../fonts/Open-Sans/Bold/Open-Sans-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+/* Transition */
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  /* line 15, ../sass/partials/_print.scss */
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+       http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 25, ../sass/partials/_print.scss */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 30, ../sass/partials/_print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 34, ../sass/partials/_print.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  /* line 43, ../sass/partials/_print.scss */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  /* line 48, ../sass/partials/_print.scss */
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  /* line 51, ../sass/partials/_print.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  /* line 62, ../sass/partials/_print.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* line 66, ../sass/partials/_print.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* line 71, ../sass/partials/_print.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 78, ../sass/partials/_print.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+/* line 11, ../sass/app.scss */
+*, :after, :before {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 16, ../sass/app.scss */
+*::before,
+*::after {
+  -moz-box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* line 22, ../sass/app.scss */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* Adjust font size */
+  font-size: 100%;
+  line-height: 1.15;
+  /* 1 */
+  /* Font varient */
+  font-variant-ligatures: none;
+  /* Smoothing */
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+}
