@@ -28,10 +28,10 @@ function getRequestHeaders() {
 
 function getUrlApi() {
 
-    if(env('APP_ENV', 'production')){
-        $url = 'https://backoffice-api.bayusyaits.com/api/';
+	if(env('APP_ENV', 'production')){
+        $url = 'https://backofficeapi.bayusyaits.com/api/';
     }else {
-        $url = 'http://bayusyaits.laravel.com/api/';
+        $url = 'https://bayusyaits.laravel.com/api/';
     }
 
     return $url;
@@ -56,7 +56,7 @@ function getClientQueryApi($data = []) {
     }else {
         $body = '';
     }
-
+    
     if(isset($data) && isset($data['secret_key']) && $data['secret_key'] !== 0) {
         $secret = explode('||secret||', $data['secret_key']);
         if(isset($secret) && isset($secret[0]) && isset($secret[1]) && isset($secret[2])) {
@@ -81,10 +81,10 @@ function getClientQueryApi($data = []) {
         $query['lang']          = isset($body['lang']) && !empty($body['lang']) ? $body['lang'] : 'en';
         $query['keyword']       = isset($body['keyword']) && !empty($body['keyword']) ? $body['keyword'] : '';
         $query['hostname']      = $data['hostname'];
-        $query['client_secret'] = $secret_key;
+        $query['client_secret'] = $secret_key ? $secret_key : 'JghwmWWX1Csu6gJm3JJmjRk3NWEx6mFbzk5nqOEX';
         $query['body']['ip']    = $data['ip'];
-        $query['username']      = $username;
-        $query['password']      = $password;
+        $query['username']      = $username ? $username : 'admin@backofficeapi.bayusyaits.com';
+        $query['password']      = $password ? $password : 'limb8391+q-';
 
         return $query;
 

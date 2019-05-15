@@ -16,6 +16,7 @@ class Cors
     public function handle($request, Closure $next)
     {
 
+/*
         if(!user($request)){
             return array(
                     'status'    => 'Error',
@@ -23,6 +24,7 @@ class Cors
                     'message'   => 'Unauthorized',
                     'data'      => 'Empty');
         }
+*/
         return $next($request)
           ->header('Access-Control-Allow-Origin', '*')
           ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')

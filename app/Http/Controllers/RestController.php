@@ -38,7 +38,7 @@ class RestController extends Res
         $content = $request->getContent();
         $req = json_decode($content,true);
 
-        $response = array('status' => 'ada',
+        $response = array('status' => 'Error',
                         'code' => Res::HTTP_NOT_FOUND,
                         'message' => 'Not found',
                         'data' => 'Empty');

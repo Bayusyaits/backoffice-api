@@ -147,7 +147,6 @@ class MrContentManagement extends Model
                         'mcl_mc_table.mcl_deleted_at'     => 0,
                         'mcl_dm_table.mcl_deleted_at'     => 0,
                         'mcl_mm_table.mcl_deleted_at'     => 0,
-                        'mcl_ms_table.mcl_deleted_at'     => 0,
                         ])
                     ;
     }
@@ -178,7 +177,6 @@ class MrContentManagement extends Model
                         'mtp_show'          => 555,
                         'mcl_dm_table.mcl_deleted_at'     => 0,
                         'mcl_mm_table.mcl_deleted_at'     => 0,
-                        'mcl_ms_table.mcl_deleted_at'     => 0,
                         // 'mt_show'           => 555,
                         // 'mt_deleted_at'     => 0,
                         // 'ms_show'           => 555,
