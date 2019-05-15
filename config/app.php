@@ -64,7 +64,7 @@ return [
     | ahead and set this to a sensible default for you out of the box.
     |
     */
-
+    
     //UTC is default
 
     'timezone' => 'Asia/Bangkok',
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'id',
 
     /*
     |--------------------------------------------------------------------------

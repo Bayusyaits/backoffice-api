@@ -39,11 +39,20 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
-        if ($exception instanceof CustomException) {
-            //
-        }
-
-        return parent::report($exception);
+        parent::report($exception);
+        // if(!in_array(get_class($exception), [
+        //     "\Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException",
+        //     "\Illuminate\Session\TokenMismatchException",
+        //     "\Symfony\Component\HttpKernel\Exception\NotFoundHttpException"
+        // ]) && 1){
+        //     \SlackWebHook::errorReporting(
+        //         "Exception : ".get_class($exception).
+        //         "\nRoute : ".\Request::fullUrl().
+        //         "\nMessage :".$exception->getMessage().
+        //         "\nFile : ".$exception->getFile().
+        //         "\nLine : ".$exception->getLine()
+        //     );
+        // };
     }
 
     /**

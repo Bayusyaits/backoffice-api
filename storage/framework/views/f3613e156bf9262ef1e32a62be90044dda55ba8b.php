@@ -1,0 +1,1 @@
+<?php $__env->startSection('body'); ?> <main id="app"> <navbar></navbar> <page></page> <foot></foot> </main> <?php echo $__env->yieldSection(); ?>

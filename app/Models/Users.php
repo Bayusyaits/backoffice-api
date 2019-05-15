@@ -19,9 +19,11 @@ class Users extends Model
         'password',
         'ip_address',
         'hostname',
+        'date_of_birth',
+        'phone_number',
+        'gender',
         'is_delete',
         'is_update',
-        'ip_address',
         'u_mrm_id',
     ];
 
@@ -43,6 +45,34 @@ class Users extends Model
                         'is_delete' =>  0,
                         'deleted_at'=>  0
     				 	]);
+    }
+    
+    public function scopeUserLogin($query, $data) {
+    	return $query->selectRaw('name, email, hostname,
+    	created_at, gender, phone_number, password')
+    				 ->where([	
+    				 	'email'	=>	$data['u_username'],
+    				 	'hostname'	=>	'backoffice.bayusyaits.com',
+                        'is_delete' =>  0,
+                        'deleted_at'=>  0
+    				 	]);
+    }
+    
+    public function scopeInsertUser($query, $posts) {
+    	$now = \Carbon\Carbon::now();
+               setlocale(LC_TIME, 'IND');
+        $query->insert([
+            'name'            => $posts['u_firstname'].' '.$posts['u_lastname'],
+            'email'           => $posts['u_username'],
+            'password'        => bcrypt($posts['u_password']),
+            'u_mrm_id'        => $posts['u_mrm'],
+            'ip_address'      => $posts['u_ip'],
+            'gender'       	  => $posts['u_gender'],
+            'date_of_birth'   => $posts['u_dob'],
+            'phone_number'    => $posts['u_phone_number'],
+            'hostname'        => 'backoffice.bayusyaits.com',
+            'created_at'      => $now
+        ]);
     }
 
 }

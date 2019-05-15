@@ -76,11 +76,11 @@ class PassportController extends Controller
  
        $validator = Validator::make($request->all(), [
  
-           'name'     => 'required',
+           'name' 		=> 'required',
  
-           'email'    => 'required|email',
+           'email' 		=> 'required|email',
  
-           'password'   => 'required',
+           'password' 	=> 'required',
  
            'c_password' => 'required|same:password',
  
@@ -97,9 +97,9 @@ class PassportController extends Controller
  
        $user = User::create($input);
  
-       $success['token']  =  $user->createToken($hostname)->accessToken;
+       $success['token'] 	=  $user->createToken($hostname)->accessToken;
  
-       $success['name']   =  $user->name;
+       $success['name'] 	=  $user->name;
  
  
  

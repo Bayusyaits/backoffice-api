@@ -154,12 +154,12 @@ function createHash($stored)
 }
 	
 function validateHash($stored, $hash_bcrypt)
-	{
+{
 	$hash = $hash_bcrypt;
 		if (password_verify(base64_encode(hash('sha256', $stored, true)), $hash_bcrypt))
 		return true;
 		
-	}
+}
 
 //** Format Tanggal YYYY-MM-DD **//
 function dateToEn($date){
